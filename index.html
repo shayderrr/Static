@@ -1,225 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Shayder.ME</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>shayder/title>
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/shayderrr/assetscool@main/stuff/eeed4d6642ac9899b40e1e0fca897340.jpg">
+  <link href="https://cdn.jsdelivr.net/gh/shayderrr/assetscool@main/stuff/styles.css" rel="stylesheet" type="text/css" />
+  <meta property="og:title" content="frogiee.one">
+  <meta name="theme-color" content="#8e2de2">
+  <meta name="msapplication-TileColor" content="#8e2de2">
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/shayderrr/assetscool@main/stuff/eeed4d6642ac9899b40e1e0fca897340.jpg">
+  <meta name="description" content="my home :)">
+  <meta property="og:description" content="my home :)">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --purple-900: #1a0033;
-      --purple-800: #2d0052;
-      --purple-700: #4a0080;
-      --purple-600: #6b21a8;
-      --purple-500: #8b5cf6;
-      --purple-400: #a78bfa;
-      --purple-300: #c4b5fd;
-      --purple-200: #e9d5ff;
-      --white: #ffffff;
-      --black: #000000;
+    ::-webkit-scrollbar {
+      width: 10px;
     }
-
+    ::-webkit-scrollbar-track {
+      background: #1a0033 !important;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #000000 !important;
+      border: 1px solid #4b0082;
+    }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--black);
-      color: var(--white);
-      min-height: 100vh;
-      position: relative;
+      color: #e0b0ff !important;
       overflow-x: hidden;
     }
-
-    .background-gradient {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, #000, #1a0033, #000);
-      z-index: 0;
+    h1, h3 {
+      color: #bf77f6 !important;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
-
-    .stars {
-      position: fixed;
-      width: 100%; height: 100%;
-      background-image:
-        radial-gradient(2px 2px at 20px 30px, white, transparent),
-        radial-gradient(2px 2px at 60px 70px, white, transparent),
-        radial-gradient(1px 1px at 50px 50px, white, transparent);
-      background-size: 200px 200px;
-      opacity: 0.3;
-      animation: starsMove 100s linear infinite;
-      z-index: 1;
-    }
-    @keyframes starsMove { from {transform: translateY(0);} to {transform: translateY(-200px);} }
-
-    .orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(60px);
-      opacity: 0.2;
-      z-index: 2;
-      animation: float 20s ease-in-out infinite;
-    }
-    .orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, var(--purple-600), transparent); top: -100px; left: -100px; }
-    .orb-2 { width: 350px; height: 350px; background: radial-gradient(circle, var(--purple-700), transparent); bottom: -100px; right: -100px; }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0,0); }
-      50% { transform: translate(40px,-40px); }
-    }
-
-    .container {
-      position: relative;
-      z-index: 10;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .content-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 1.5rem;
-      padding: 3rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 0 80px rgba(139, 92, 246, 0.15);
-    }
-
-    .page-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-align: center;
-      background: linear-gradient(135deg, var(--white), var(--purple-300));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-    }
-
-    .page-subtitle {
-      text-align: center;
-      color: var(--purple-200);
-      margin-bottom: 2rem;
-    }
-
-    .profile-image {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 1rem;
-      border: 3px solid var(--purple-500);
-      box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
-    }
-
-    .author-name {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-    }
-
-    .message-box {
-      background: rgba(139, 92, 246, 0.05);
-      border: 1px solid rgba(139, 92, 246, 0.2);
-      border-radius: 1rem;
-      padding: 2rem;
-      color: var(--purple-200);
-      line-height: 1.6;
-    }
-
-    /* GAMES SECTION */
-    .games-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 1.5rem;
-      padding: 3rem;
-      box-shadow: 0 0 80px rgba(139, 92, 246, 0.15);
-    }
-
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .game-link {
-      display: block;
-      text-align: center;
-      background: rgba(139, 92, 246, 0.1);
-      border: 1px solid rgba(139, 92, 246, 0.3);
-      border-radius: 0.75rem;
-      padding: 1rem;
-      color: var(--purple-300);
-      font-weight: 600;
+    a {
+      color: #d896ff !important;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: 0.3s;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
-
-    .game-link:hover {
-      background: rgba(139, 92, 246, 0.25);
-      color: var(--white);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 20px rgba(139, 92, 246, 0.3);
+    a:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 10px #d896ff, 0 0 5px #000;
     }
-
-    @media (max-width: 768px) {
-      .page-title { font-size: 2rem; }
+    #big-profile-pic {
+      border: 5px solid #000000 !important;
+      border-radius: 50% !important;
+      box-shadow: 0 0 30px #8e2de2 !important;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .enter-button {
+      border: 2px solid #000000 !important;
+      box-shadow: 0 0 15px #8e2de2 !important;
+      color: #d896ff !important;
+      background-color: rgba(0, 0, 0, 0.7) !important;
+      cursor: pointer;
+    }
+    #text {
+      color: #d896ff !important;
+      text-shadow: 2px 2px #000;
+    }
+    #therealskibiditoilet {
+      border-color: #000000 !important;
     }
   </style>
+
+  <script src="https://cdn.jsdelivr.net/gh/shayderrr/assetscool@main/stuff/three.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/shayderrr/assetscool@main/stuff/vanta.js"></script>
 </head>
+
 <body>
-  <div class="background-gradient"></div>
-  <div class="stars"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-
-  <div class="container">
-    <!-- Announcement Section -->
-    <main class="content-card">
-      <h1 class="page-title">Announcements</h1>
-      <p class="page-subtitle">Updates, Concerns, and Important Information</p>
-
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1200px-Anonymous_emblem.svg.png" class="profile-image" alt="Anonymous">
-
-      <div class="author-name">Anonymous — <span style="color: var(--purple-300);">Administrator</span></div>
-
-      <div class="message-box">
-        Welcome to my site! I'm excited to have you here. I hope it doesn't say that you can’t embed this website, as I want this to be completely open source.
-      </div>
-    </main>
-    <section class="games-card">
-      <h1 class="page-title">Games</h1>
-      <p class="page-subtitle">Click to download</p>
-
-      <div class="games-grid">
-        <a class="game-link" href="#" onclick="downloadFile('https://raw.githubusercontent.com/ethanytangcodes/static/refs/heads/main/gnmath.html', 'gnmath.html')">gn math</a>
-        <a class="game-link" href="#" onclick="downloadFile('https://raw.githubusercontent.com/ethanytangcodes/static/refs/heads/main/selenite.html', 'selenite.html')">selenite</a>
-        <a class="game-link" href="#" onclick="downloadFile('https://raw.githubusercontent.com/ethanytangcodes/static/refs/heads/main/ugs.html', 'ugs.html')">ugs single-file</a>
-        <a class="game-link" href="#" onclick="downloadFile('https://raw.githubusercontent.com/ethanytangcodes/static/refs/heads/main/universal.html', 'universallauncher.html')">universal launcher</a>
-        <a class="game-link" href="#" onclick="downloadFile('https://raw.githubusercontent.com/ethanytangcodes/static/refs/heads/main/zen.html', 'zenbrowser.html')">zen browser</a>
-      </div>
-    </section>
+  <div id="enter-popup" class="enter-popup">
+    <a id="enter-button" class="enter-button">click to enter...</a>
   </div>
 
+  <audio id="enter-sound" src="https://cdn.jsdelivr.net/gh/shayderrr/assetscool@main/stuff/bg.mp3" loop></audio>
+
+  <div id="overlay">
+    <div id="text"></div>
+  </div>
+
+  <div id="therealskibiditoilet">
+    <br>
+    <img id="big-profile-pic" src="https://cdn.jsdelivr.net/gh/shayderrr/assetscool@main/stuff/eeed4d6642ac9899b40e1e0fca897340.jpg">
+    <h1>hi, im shayderrr</h1>
+    
+    <h3>projects.</h3>
+    <a href="https://tinyurl.com/thegamevaults" target="_blank">game vault</a>
+    <br>
+    <a href="https://github.com/genizy/web-port" target="_blank">web ports</a>
+    <br>
+    <a href="https://gn-math.dev" target="_blank">gn-math</a>
+    
+    <h3>socials.</h3>
+    <a href="https://youtube.com/@shxyder" target="_blank">youtube</a>
+    <br>
+    <a href="https://discord.gg/3TFn88XAMS" target="_blank">discord (server)</a>
+    <br>
+    <a href="https://discord.com/users/1090734561006198814/" target="_blank">discord (profile)</a>
+    <br>
+    <a href="https://github.com/shayderrr" target="_blank">github</a>
+    <br>
+    <a href="https://steamcommunity.com/profiles/76561199520826319" target="_blank">steam</a>
+    <br>
+    <a href="https://www.tiktok.com/@shxyder" target="_blank">tiktok</a>
+  </div>
+
+  <div id="vanta"> </div>
+
   <script>
-    function downloadFile(url, filename) {
-      fetch(url)
-        .then(response => response.blob())
-        .then(blob => {
-          const link = document.createElement('a');
-          link.href = URL.createObjectURL(blob);
-          link.download = filename;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        });
-    }
+    VANTA.CELLS({
+      el: "#vanta",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      color1: 0x4b0082,
+      color2: 0x1a0033,
+      size: 0.80,
+      speed: 3.50
+    });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/gh/shayderrr/assetscool@main/stuff/main2.js"></script>
 </body>
 </html>
